@@ -1,95 +1,69 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Script from "next/script";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main className={styles.main} style={{ }}>
+      <div className={styles.description}>Keep Your Dog Looking Beautiful!</div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ textAlign: "center" }}>All Fur Dogs Grooming Salon</h1>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <Script
+        id="setmore_script"
+        type="text/javascript"
+        src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"
+      />
+      <a
+        style={{ float: "none" }}
+        id="Setmore_button_iframe"
+        href="https://booking.setmore.com/scheduleappointment/74df8ba5-fb3e-4b18-8b8c-dcf353e23bd8"
+      >
+        <img
+          border="none"
+          src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg"
+          alt="Book an appointment with All Fur Dogs Grooming Salon using Setmore"
         />
+      </a>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        {["Grooming", "Bathing", "Haircut", "Nail Trim"].map((item, idx) => (
+          <div key={idx} style={{ justifyContent: "center", padding: "10px" }}>
+            {item}
+          </div>
+        ))}
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <footer
+        style={{
+          position: "fixed",
+          bottom: "0",
+          left: 0,
+          width: "100vw",
+          padding: "20px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div style={{fontSize: "12px"}}>395 Springfield Ave</div>
+        <div style={{fontSize: "12px"}}>Berkeley Heights, NJ 07922</div>
+      </footer>
     </main>
   );
 }
